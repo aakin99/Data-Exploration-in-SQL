@@ -59,8 +59,10 @@ SELECT location, MAX(total_deaths) as total_death_count
 FROM `my-project-1-347317.PortfolioProject.Covid data`
 -- WHERE location like '%United States%'
 WHERE continent is null 
+and location not in ('World', 'European Union', 'International', 'High income', 'Low income', 'Upper middle income', 'Lower middle income'
+)
 GROUP BY location
- ORDER BY total_death_count DESC
+ORDER BY total_death_count DESC
 
 --Global cases total per day, using new_cases total to find total cases
 
